@@ -60,9 +60,22 @@ def tela_biografia(numero: int, master):
     # Botão "Fechar" centralizado dentro do frame
     fechar_btn = tk.Button(fechar_frame, text="Fechar", command=janela.quit, font=("Helvetica", 14))
     fechar_btn.pack()  # Centraliza o botão dentro do frame
+    ultima=tk.Button(janela,text='ultimo',command=ultimo)
+    ultima.pack()
 
+    primeiro= tk.Button(tela_biografia,text='primeiro',command=primeiro)
+    primeiro.pack()
+    def primeiro(tela_biografia,pokemon_atual):
+        tela_biografia.destroy()
+        tela_biografia(1)
+     
     # Executar a janela
     janela.mainloop()
+
+def ultimo (janela,pokemon_atual):
+    janela.destroy()
+
+    tela_biografia(151)
 
 # Chama a função para mostrar a janela
 if __name__ == '__main__':
